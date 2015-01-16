@@ -1,5 +1,4 @@
 /**
- * 单例
  * @author lvsheng
  * @date 2015/1/3
  */

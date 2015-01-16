@@ -1,6 +1,4 @@
-//调用方：
-//调用前要判断是不是有全局变量
-
+//微信分享相关代码
 var g_sharedContent = {
     appid: '',
     url: 'tieba.baidu.com/tb/zt/weixingame/awesome_translation/index.html?v=1501131933',

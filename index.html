@@ -61,6 +61,7 @@
     </style>
 
     <script>
+        //微信下偶尔会对html文件进行缓存（自动走304），这里使用小trick强制每次访问都拉取最新的html文件
         if (!/\.html\?t=\d+$/.test(location.href)) {
             var t = (new Date()).getTime();
             location.href = location.href.replace(/\.html.*/, '.html?t=' + t);
@@ -271,8 +272,6 @@
 
 <canvas id="gameCanvas" width="1136" height="640"></canvas>
 
-<!--因cocos与require不太兼容（如果全局有require，cocos会作为cmd规范处理），故需在require之前先加载cocos-->
-<!--<script type="text/javascript" src="cocos2d-js-v3.1-lite.js" charset="UTF-8"></script>-->
 <script>
     //为屏幕旋转后也能正常玩，不得已改了cocos源码，在其内调用了下面的方法，故将其放在全局下~
     window.rotatedTouchPositionTransformer = {
@@ -313,17 +312,15 @@
         }
     };
 </script>
-<!--<script type="text/javascript" src="http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/cocos2d-js-v3.2.js" charset="UTF-8"></script>-->
+<!--因cocos与require不太兼容（如果全局有require，cocos会作为cmd规范处理），故需在require之前先加载cocos-->
 <script type="text/javascript" src="http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/cocos2d-js-v3.2.js?v=1501131141" charset="UTF-8"></script>
 <!--语言增强型基础库，认为还是应该作为全局引入-->
 <script src="http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/underscore.js"></script>
 <script data-main="src/main" src="http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/require.js"></script>
-<!--<script data-main="src/main" src="require.js"></script>-->
-<!-- , baseUrl: "http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/src" -->
 <script>
     requirejs.config({urlArgs: 'v=1501151002' , baseUrl: "http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/src"  });
 </script>
-
+<!--微信分享代码-->
 <script src="http://tb1.bdstatic.com/tb/zt/weixingame/awesome_translation/weixin.js?v=1501131535"></script>
 
 </body>

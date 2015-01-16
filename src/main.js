@@ -1,5 +1,7 @@
 /**
  * 游戏入口
+ * 主要处理cocos游戏启动、对屏幕旋转事件进行处理（旋转后重启当前运行的场景）
+ * cocos启动后、游戏内主要逻辑由./util/myDirector处理
  */
 require([
     './util/resourceFileList',
