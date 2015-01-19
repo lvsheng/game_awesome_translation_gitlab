@@ -88,6 +88,7 @@ define([
             }
         },
         weiboShare: function () {
+            $.stats.myTrack("微博分享总量");
             $.stats.myTrack("微博分享-" + window.g_sharedContent._position);
             dataStorage.markHasShared();
             window.location.href =

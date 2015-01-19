@@ -51,6 +51,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         window.justAfterWeixinShareOnHorizontal = isHorizontal();
         shareFriend();
         g_dataStorage.markHasShared();
+        $.stats.myTrack("微信分享总量");
         $.stats.myTrack("微信分享给好友-" + g_sharedContent._position);
     });
     // 分享到朋友圈
@@ -58,6 +59,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         window.justAfterWeixinShareOnHorizontal = isHorizontal();
         shareTimeline();
         g_dataStorage.markHasShared();
+        $.stats.myTrack("微信分享总量");
         $.stats.myTrack("微信分享到朋友圈-" + g_sharedContent._position);
     });
     // 分享到微博
@@ -65,6 +67,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
         window.justAfterWeixinShareOnHorizontal = isHorizontal();
         shareWeibo();
         g_dataStorage.markHasShared();
+        $.stats.myTrack("微信分享总量");
         $.stats.myTrack("微信分享到微博-" + g_sharedContent._position);
     });
     function isHorizontal () { return window.innerWidth > window.innerHeight; }
