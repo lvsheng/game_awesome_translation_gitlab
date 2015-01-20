@@ -9,7 +9,7 @@ define([
             this._backgroundSprite = new cc.Sprite(resourceFileMap.pipelineBackground.bg);
             var winSize = cc.director.getWinSize();
             this._backgroundSprite.attr({ anchorX: 1, anchorY: 1, x: winSize.width, y: winSize.height });
-            this._scaleToCoverWindow(this._backgroundSprite);
+            this._scaleToCoverWindow(this._backgroundSprite); //缩放背景图
             this.addChild(this._backgroundSprite);
 
             this.bake();

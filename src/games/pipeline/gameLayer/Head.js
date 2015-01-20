@@ -1,4 +1,5 @@
 /**
+ * 机器人的头，可以被安装到机器人的body上
  * @author lvsheng
  * @date 2014/12/22
  */
@@ -63,6 +64,12 @@ define([
                 return nearestDistance;
             }
         },
+        /**
+         * 指定body的位置是否符合（是否在可安装范围内）
+         * @param body
+         * @returns {boolean}
+         * @private
+         */
         _positionIsFit: function (body) {
             return !body.hasHead() && Math.abs(this._getBodyDistance(body)) <= FIT_DISTANCE;
         },
