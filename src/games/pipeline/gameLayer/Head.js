@@ -80,6 +80,7 @@ define([
             ));
         },
         /**
+         * 使头掉落（安装失败时）
          * @param offset 距最近的body的偏移
          * @private
          */
@@ -90,19 +91,6 @@ define([
                 new cc.MoveTo(moveTime, self.x, -(self.height * self.anchorY)).easing(cc.easeIn(1.8)),
                 new cc.CallFunc(function() { self._assembleOrDropDoneCallback(); self._remove(); })
             ));
-
-            var rotateBy;
-            if (Math.abs(offset) < 80) {
-                if (offset > 0) { rotateBy = -180; }
-                else if (offset < 0) { rotateBy = 180; }
-            }
-            if (rotateBy) {
-                //self.runAction(new cc.Sequence(
-                //    new cc.DelayTime(ASSEMBLE_TIME),
-                //    (new cc.RotateBy(moveTime - ASSEMBLE_TIME, rotateBy)).easing(cc.easeSineIn())
-                    //(new cc.RotateBy(moveTime - ASSEMBLE_TIME, rotateBy))
-                //));
-            }
         },
         _remove: function () { this.parent.removeChild(this); }
     });

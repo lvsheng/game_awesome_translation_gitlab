@@ -5,7 +5,6 @@ define([
     '../../../util/resourceFileMap',
     '../../../commonClass/TimerNode'
 ], function (Pipeline, Head, pauseGame, resourceFileMap, TimerNode) {
-    //var GAME_TIME = 30;
     return cc.Layer.extend({
         ctor: function (endCallback) {
             var self = this;
@@ -22,9 +21,6 @@ define([
             self.addChild(bar, -9999999);
 
             self._addNewHead();
-
-            //游戏定时结束
-            //self.scheduleOnce(function(){ self._pipeline.stopAddBody(); }, GAME_TIME);
 
             self.schedule(function () {
                 if (this._pipeline.getBodyList().length === 0) {
